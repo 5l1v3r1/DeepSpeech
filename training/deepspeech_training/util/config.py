@@ -45,8 +45,11 @@ def initialize_globals():
     if not FLAGS.checkpoint_dir:
         FLAGS.checkpoint_dir = xdg.save_data_path(os.path.join('deepspeech', 'checkpoints'))
 
-    if FLAGS.load not in ['last', 'best', 'init', 'auto']:
-        FLAGS.load = 'auto'
+    if FLAGS.load_train not in ['last', 'best', 'init', 'auto']:
+        FLAGS.load_train = 'auto'
+
+    if FLAGS.load_evaluate not in ['last', 'best', 'auto']:
+        FLAGS.load_evaluate = 'auto'
 
     # Set default summary dir
     if not FLAGS.summary_dir:
